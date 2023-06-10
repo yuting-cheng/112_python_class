@@ -7,4 +7,8 @@ codeSeries = codeFrame['code'].astype(str) + codeFrame['name']
 with st.sidebar:
     selected_code = st.multiselect("請選擇股票(可複選):",codeSeries,max_selections=4)
 
-st.write(selected_code)
+
+
+for code in selected_code:
+    code = code[:4]+'.TW' #此為取code前四位字＋TW 顯示
+    st.write(code)
